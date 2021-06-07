@@ -24,7 +24,7 @@ class RunCommand {
 
         GroovyClassLoader groovyClassLoader = new GroovyClassLoader(previousClassLoader)
 
-        List<RepositoryConfiguration> repositoryConfigurations = [new RepositoryConfiguration("grailsCentral", new URI("https://repo.grails.org/grails/core"), false)]
+        List<RepositoryConfiguration> repositoryConfigurations = [new RepositoryConfiguration("grailsCentral", new URI("https://repo.grails.org/artifactory/core"), false)]
 
         AetherGrapeEngine grapeEngine = AetherGrapeEngineFactory.create(groovyClassLoader, repositoryConfigurations, new DependencyResolutionContext())
         grapeEngine.grab([:], [group: "org.grails", module: "grails-shell", version: grailsVersion])
